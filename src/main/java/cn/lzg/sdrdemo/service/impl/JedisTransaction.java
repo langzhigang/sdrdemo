@@ -20,6 +20,7 @@ public class JedisTransaction {
 	@Resource(name = "stringRedisTemplate")
 	private ValueOperations<String, String> valueOps;
 	
+	//这个是官网写法
 	public void testTransaction(){
 		List<Object> txResults = (List<Object>) stringRedisTemplate.execute(new SessionCallback<List<Object>>() {
 			  public List<Object> execute(RedisOperations operations) throws DataAccessException {
@@ -30,6 +31,8 @@ public class JedisTransaction {
 			  }
 			});
 			System.out.println("Number of items added to set: " + txResults.get(0));
+			
+		//直接使用会有问题，因为RedisTemplate每次拿到的都是新的连接	
 //		stringRedisTemplate.multi();
 //		stringRedisTemplate.exec();
 	}
