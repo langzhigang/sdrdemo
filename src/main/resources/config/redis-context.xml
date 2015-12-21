@@ -13,11 +13,6 @@
 	<!-- 扫描 redis properties -->
 	<context:property-placeholder location="classpath:property/redis.properties" />
 
- <!--  <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-      p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}" p:use-pool="true"/>
-  redis template definition
-  <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connection-factory-ref="jedisConnectionFactory"/> -->
-	
 	<bean id="jedisConnectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
 		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}"
