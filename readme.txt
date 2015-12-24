@@ -1,1 +1,1 @@
-spring-data-redis�ļ�demo
+spring-data-redis的简单demo
